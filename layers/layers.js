@@ -26,30 +26,52 @@ var lyr_kenyaadmin_1 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/kenyaadmin_1.png" /> kenya - admin'
             });
-var format_OperationalStations_2 = new ol.format.GeoJSON();
-var features_OperationalStations_2 = format_OperationalStations_2.readFeatures(json_OperationalStations_2, 
+var format_ActiveStations_2 = new ol.format.GeoJSON();
+var features_ActiveStations_2 = format_ActiveStations_2.readFeatures(json_ActiveStations_2, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_OperationalStations_2 = new ol.source.Vector({
+var jsonSource_ActiveStations_2 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_OperationalStations_2.addFeatures(features_OperationalStations_2);
-var lyr_OperationalStations_2 = new ol.layer.Vector({
+jsonSource_ActiveStations_2.addFeatures(features_ActiveStations_2);
+var lyr_ActiveStations_2 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_OperationalStations_2, 
-                style: style_OperationalStations_2,
-                popuplayertitle: 'Operational Stations',
+                source:jsonSource_ActiveStations_2, 
+                style: style_ActiveStations_2,
+                popuplayertitle: 'Active Stations',
                 interactive: true,
-                title: '<img src="styles/legend/OperationalStations_2.png" /> Operational Stations'
+                title: '<img src="styles/legend/ActiveStations_2.png" /> Active Stations'
             });
+var format_KenyaPlanned_3 = new ol.format.GeoJSON();
+var features_KenyaPlanned_3 = format_KenyaPlanned_3.readFeatures(json_KenyaPlanned_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_KenyaPlanned_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_KenyaPlanned_3.addFeatures(features_KenyaPlanned_3);
+var lyr_KenyaPlanned_3 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_KenyaPlanned_3, 
+                style: style_KenyaPlanned_3,
+                popuplayertitle: 'Kenya Planned',
+                interactive: true,
+    title: 'Kenya Planned<br />\
+    <img src="styles/legend/KenyaPlanned_3_0.png" /> 12<br />\
+    <img src="styles/legend/KenyaPlanned_3_1.png" /> 24<br />\
+    <img src="styles/legend/KenyaPlanned_3_2.png" /> 30<br />\
+    <img src="styles/legend/KenyaPlanned_3_3.png" /> 6<br />\
+    <img src="styles/legend/KenyaPlanned_3_4.png" /> FOFO<br />' });
 
-lyr_GoogleSatellite_0.setVisible(true);lyr_kenyaadmin_1.setVisible(true);lyr_OperationalStations_2.setVisible(true);
-var layersList = [lyr_GoogleSatellite_0,lyr_kenyaadmin_1,lyr_OperationalStations_2];
+lyr_GoogleSatellite_0.setVisible(true);lyr_kenyaadmin_1.setVisible(true);lyr_ActiveStations_2.setVisible(true);lyr_KenyaPlanned_3.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_kenyaadmin_1,lyr_ActiveStations_2,lyr_KenyaPlanned_3];
 lyr_kenyaadmin_1.set('fieldAliases', {'fid': 'fid', 'adm2_name': 'adm2_name', 'adm2_pcode': 'adm2_pcode', 'adm1_name': 'adm1_name', 'adm1_pcode': 'adm1_pcode', 'area_sqkm': 'area_sqkm', 'center_lat': 'center_lat', 'center_lon': 'center_lon', 'Hub_Count': 'Hub_Count', 'Swap Site_count': 'Swap Site_count', 'Active': 'Active', 'Active-Zero Swaps': 'Active-Zero Swaps', 'Not Started': 'Not Started', 'WIP ': 'WIP ', 'Drop_Count': 'Drop_Count', });
-lyr_OperationalStations_2.set('fieldAliases', {'Station ID': 'Station ID', 'Station Name': 'Station Name', 'Country': 'Country', 'State': 'State', 'City': 'City', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'Status': 'Status', 'Business Model': 'Business Model', });
+lyr_ActiveStations_2.set('fieldAliases', {'Station ID': 'Station ID', 'Station Name': 'Station Name', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'Planned Racks': 'Planned Racks', 'Plan': 'Plan', 'Status': 'Status', 'Business Model': 'Business Model', });
+lyr_KenyaPlanned_3.set('fieldAliases', {'Station ID': 'Station ID', 'Station Name': 'Station Name', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'Planned Racks': 'Planned Racks', 'Plan': 'Plan', 'Status': 'Status', 'Business Model': 'Business Model', });
 lyr_kenyaadmin_1.set('fieldImages', {'fid': 'TextEdit', 'adm2_name': 'TextEdit', 'adm2_pcode': 'TextEdit', 'adm1_name': 'TextEdit', 'adm1_pcode': 'TextEdit', 'area_sqkm': 'TextEdit', 'center_lat': 'TextEdit', 'center_lon': 'TextEdit', 'Hub_Count': 'Range', 'Swap Site_count': 'Range', 'Active': 'Range', 'Active-Zero Swaps': 'Range', 'Not Started': 'Range', 'WIP ': 'Range', 'Drop_Count': 'Range', });
-lyr_OperationalStations_2.set('fieldImages', {'Station ID': 'TextEdit', 'Station Name': 'TextEdit', 'Country': 'TextEdit', 'State': 'TextEdit', 'City': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'Status': 'TextEdit', 'Business Model': 'TextEdit', });
+lyr_ActiveStations_2.set('fieldImages', {'Station ID': 'TextEdit', 'Station Name': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'Planned Racks': 'TextEdit', 'Plan': 'TextEdit', 'Status': 'TextEdit', 'Business Model': 'TextEdit', });
+lyr_KenyaPlanned_3.set('fieldImages', {'Station ID': 'TextEdit', 'Station Name': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'Planned Racks': 'TextEdit', 'Plan': 'TextEdit', 'Status': 'TextEdit', 'Business Model': 'TextEdit', });
 lyr_kenyaadmin_1.set('fieldLabels', {'fid': 'no label', 'adm2_name': 'no label', 'adm2_pcode': 'no label', 'adm1_name': 'no label', 'adm1_pcode': 'no label', 'area_sqkm': 'no label', 'center_lat': 'no label', 'center_lon': 'no label', 'Hub_Count': 'no label', 'Swap Site_count': 'no label', 'Active': 'no label', 'Active-Zero Swaps': 'no label', 'Not Started': 'no label', 'WIP ': 'no label', 'Drop_Count': 'no label', });
-lyr_OperationalStations_2.set('fieldLabels', {'Station ID': 'no label', 'Station Name': 'no label', 'Country': 'no label', 'State': 'no label', 'City': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'Status': 'inline label - always visible', 'Business Model': 'no label', });
-lyr_OperationalStations_2.on('precompose', function(evt) {
+lyr_ActiveStations_2.set('fieldLabels', {'Station ID': 'no label', 'Station Name': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'Planned Racks': 'no label', 'Plan': 'no label', 'Status': 'no label', 'Business Model': 'inline label - always visible', });
+lyr_KenyaPlanned_3.set('fieldLabels', {'Station ID': 'no label', 'Station Name': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'Planned Racks': 'inline label - always visible', 'Plan': 'no label', 'Status': 'no label', 'Business Model': 'no label', });
+lyr_KenyaPlanned_3.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
